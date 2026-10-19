@@ -10,7 +10,7 @@ from calculator import add, subtract, multiply, divide
 # Run with detail: pytest -v
 
 
-# SAMPLE TEST (done for you) 
+# SAMPLE TEST (done for you)
 def test_add():
     assert add(2, 3) == 5          # normal case
     assert add(-2, -3) == -5       # negative numbers
@@ -24,12 +24,32 @@ def test_add():
 
 
 # TODO: write test_subtract()
+def test_subtract():
+    assert subtract(3, 2) == 1
+    assert subtract(-3, -10) == 7
+    assert subtract(3, -5) == 8
+    assert subtract(0, 0) == 0
+    assert subtract(1, 0) == 1
+    assert subtract(1.7, -2.1) == 3.8
 
 
 # TODO: write test_multiply()
+def test_multiply():
+    assert multiply(4, 5) == 20
+    assert multiply(0, 5) == 0
+    assert multiply(1, 3.7) == 3.7
+    assert multiply(-10, 5) == -50
+    assert multiply(-4, -5) == 20
+    assert multiply(1.5, -1.5) == -2.25
 
 
 # TODO: write test_divide()
+def test_divide():
+    assert divide(10, 2) == 5
+    assert divide(-10, 2) == -5
+    assert divide(-10, -1) == 10
+    assert divide(5, .5) == 10
+    assert divide(1.5, -.5) == -3
 
 
 # TODO: write test_divide_by_zero()
@@ -37,5 +57,9 @@ def test_add():
 #       with pytest.raises(ValueError):
 #           divide(1, 0)
 
+def test_divide_by_zero():
+    with pytest.raises(ValueError):
+        divide(1, 0)
 
-# BONUS: add any extra tests you want! 
+
+# BONUS: add any extra tests you want!
